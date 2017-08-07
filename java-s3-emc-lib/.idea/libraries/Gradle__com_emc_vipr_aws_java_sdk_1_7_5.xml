@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.emc.vipr:aws-java-sdk:1.7.5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.emc.vipr/aws-java-sdk/1.7.5/a8fc00dec80dcfd369b1d8cb337932ced5650777/aws-java-sdk-1.7.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.emc.vipr/aws-java-sdk/1.7.5/729859b3d02a6170e9d868dbe9d8890dd5b0502/aws-java-sdk-1.7.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

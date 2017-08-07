@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.emc.vipr:s3-client:2.0.3">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.emc.vipr/s3-client/2.0.3/ab4aab7075b3480d89ef8d262bbcc92f915763ec/s3-client-2.0.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.emc.vipr/s3-client/2.0.3/95c97572971fa80c5b9304d9d63c87f0793d3a80/s3-client-2.0.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

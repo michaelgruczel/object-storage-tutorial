@@ -1,6 +1,6 @@
 # object storage for java developers
 
-:exclamation: TOOD this tutorial is under development, don't use it at the moment
+> :warning: TOOD this tutorial is under development, don't use it at the moment
 
 ## what is object storage ?
 
@@ -54,7 +54,7 @@ The same steps can be executed with different credentials with other providers a
 
 After registering at you can get the Credentials in the credentials tab on the website.
 
-TODO Image 1
+![](https://github.com/michaelgruczel/object-storage-tutorial/raw/master/image1.PNG "")
 
 They should look like this:
 
@@ -131,8 +131,9 @@ Some tools like the S3 Browser (http://s3browser.com/), cyberduck (https://cyber
 
 Setup example for S3 browser to use ECS Testdrive:
 
-TODO Image 2
-TODO Image 3
+![](https://github.com/michaelgruczel/object-storage-tutorial/raw/master/image2.PNG "")
+
+![](https://github.com/michaelgruczel/object-storage-tutorial/raw/master/image3.PNG "")
 
 ## Java examples
 
@@ -145,21 +146,29 @@ I will use a simple spring boot app to showcase some functionalty. The app offer
 * update a file in a bucket
 * remove a file in a bucket
 
-you have to add your credentials into the application.yml and build and run the app locally via:
-
-    gradlew bootRun
-    
-TODO
+I will use the same app with 2 libs.
 
 ### Java and the EMC ECS jdk
 
+One example for an emc lib can be found under java-s3-emc-lib
+you have to add your credentials into the java-s3-emc-lib\src\main\resources\application.properties and build and run the app locally via
+
+    # in java-s3-emc-lib folder 
+    gradlew bootRun
+
+open the app under http://localhost:8080
+
+More examples under: 
+
+* https://www.emc.com/techpubs/ecs/ecs_s3_supported_features-1.htm
+* https://github.com/EMCECS/ecs-samples
+
+### Java and the Amazon S3 jdk
+
 TODO
+http://docs.aws.amazon.com/AmazonS3/latest/dev/ListingObjectKeysUsingJava.html
 
-## Java and the Amazon S3 jdk
-
-TODO
-
-## Minio
+### Minio
 
 TODO
 
