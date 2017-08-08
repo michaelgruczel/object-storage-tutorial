@@ -130,7 +130,7 @@ Setup example for S3 browser to use ECS Testdrive:
 
 ![](https://github.com/michaelgruczel/object-storage-tutorial/raw/master/image2.PNG "")
 
-![](https://github.com/michaelgruczel/object-storage-tutorial/raw/master/image3.PNG "")
+![](https://github.com/michaelgruczel/object-storage-tutorial/raw/master/image3.png "")
 
 There are some commandline tools available as well, for example:
 
@@ -146,9 +146,6 @@ I will use a simple spring boot app to showcase some functionalty. The app offer
 * remove a bucket
 * upload a file into a bucket
 * remove a file in a bucket
-
-TODO:
-
 * download a file from a bucket
 
 I will use the same app with 2 libs.
@@ -176,7 +173,9 @@ Download minio for your os or start is as docker container.
 
 You should be able to start it with 
 
+<PRE>
 minio server <PATH-TO-A-DATA-FOLDER-WHICH-CAN-BE-EMPTY>
+</PRE>
 
 You should get something like this
 
