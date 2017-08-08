@@ -735,7 +735,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/build.gradle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../java-s3-aws-lib/build.gradle" />
     <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RecentsManager">
@@ -1238,12 +1238,12 @@
       <updated>1502092418326</updated>
       <workItem from="1502092422794" duration="9126000" />
       <workItem from="1502109939340" duration="2905000" />
-      <workItem from="1502115961704" duration="8811000" />
+      <workItem from="1502115961704" duration="9808000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20842000" />
+    <option name="totallyTimeSpent" value="21839000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1737" y="153" width="1604" height="867" extended-state="0" />

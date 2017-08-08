@@ -1,7 +1,5 @@
 # object storage for java developers
 
-> :warning: TOOD this tutorial is under development, don't use it at the moment
-
 ## what is object storage ?
 
 Object storage manages data as objects, as opposed to other storage architectures like file systems which manage data as a file. The most object storage systems provide REST APIs to manage the containers and objects.
@@ -120,12 +118,11 @@ let's log out from the management API
 
     curl https://portal.ecstestdrive.com/logout -k -H "X-SDS-AUTH-TOKEN: <X-SDS-AUTH-TOKEN>"
 
-Let's play a little bit wit the S3 compatible endpoints (http://www.emc.com/techpubs/ecs/ecs_s3_supported_features-1.htm).
-We will create a bucket, add to objects to that bucket and delete them again. 
+A docu how to play with the S3 compatible REST endpoints (http://www.emc.com/techpubs/ecs/ecs_s3_supported_features-1.htm) will come soon (at least that is the plan). We will then create a bucket, add to objects to that bucket and delete them again. 
 
-TODO
+.... coming soon
 
-## some S3 browsers
+## some S3 tools
 
 Some tools like the S3 Browser (http://s3browser.com/), cyberduck (https://cyberduck.io/) or cloudberry (http://www.cloudberrylab.com/) provide UIs to access Amazon S3. It works for ECS as well.
 
@@ -134,6 +131,12 @@ Setup example for S3 browser to use ECS Testdrive:
 ![](https://github.com/michaelgruczel/object-storage-tutorial/raw/master/image2.PNG "")
 
 ![](https://github.com/michaelgruczel/object-storage-tutorial/raw/master/image3.PNG "")
+
+There are some commandline tools available as well, for example:
+
+* mc https://docs.minio.io/docs/minio-client-quickstart-guide
+* S3cmd http://s3tools.org/s3cmd
+* amazon cli https://aws.amazon.com/cli/
 
 ## Java examples
 
@@ -167,14 +170,51 @@ More examples under:
 
 ### Java and the Amazon S3 jdk
 
-TODO
-http://docs.aws.amazon.com/AmazonS3/latest/dev/ListingObjectKeysUsingJava.html
+For this sample I will use Minio (https://github.com/minio/minio).
+Minio is an open source object storage server compatible with Amazon S3 APIs. 
+Download minio for your os or start is as docker container. 
 
-### Minio
+You should be able to start it with 
 
-TODO
+minio server <PATH-TO-A-DATA-FOLDER-WHICH-CAN-BE-EMPTY>
 
-https://github.com/minio/minio
+You should get something like this
+
+<PRE>
+Endpoint:  http://169.254.17.141:9000  http://152.62.208.84:9000  http://169.254.11.78:9000  http://10.0.0.1:9000  http://192.168.64.1:9000  http://192.168.11.1:9000  http://192.168.224.1:9000  http://127.0.0.1:9000
+AccessKey: BN5J705K05IVP0TWAMGH
+SecretKey: LDzL/pPIyHLNUr7HKjoiBxpGLg9k/6sUpQb/rjq8
+Region:    us-east-1
+
+Browser Access:
+   http://169.254.17.141:9000  http://152.62.208.84:9000  http://169.254.11.78:9000  http://10.0.0.1:9000  http://192.168.64.1:9000  http://192.168.11.1:9000  http://192.168.224.1:9000  http://127.0.0.1:9000
+
+Command-line Access: https://docs.minio.io/docs/minio-client-quickstart-guide
+   $ mc.exe config host add myminio http://169.254.17.141:9000 BN5J705K05IVP0TWAMGH LDzL/pPIyHLNUr7HKjoiBxpGLg9k/6sUpQb/rjq8
+
+Object API (Amazon S3 compatible):
+   Go:         https://docs.minio.io/docs/golang-client-quickstart-guide
+   Java:       https://docs.minio.io/docs/java-client-quickstart-guide
+   Python:     https://docs.minio.io/docs/python-client-quickstart-guide
+   JavaScript: https://docs.minio.io/docs/javascript-client-quickstart-guide
+   .NET:       https://docs.minio.io/docs/dotnet-client-quickstart-guide
+
+</PRE>
+
+open the broser http://127.0.0.1:9000 and enter the creds you see in the shell when starting minio.
+
+We will start again our sample, now using the amazon lib. 
+Change the credentials to fit to oyur local minio instance in java-s3-aws-lib\src\main\resources\application.properties
+
+    # in java-s3-aws-lib folder 
+    gradlew bootRun
+
+open the app under http://localhost:8080    
+
+![](https://github.com/michaelgruczel/object-storage-tutorial/raw/master/image4.PNG "")
+
+more infos under http://docs.aws.amazon.com/AmazonS3/latest/dev/ListingObjectKeysUsingJava.html and https://docs.minio.io/
+
 
 
 
