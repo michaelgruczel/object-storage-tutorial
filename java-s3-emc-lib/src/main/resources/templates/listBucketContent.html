@@ -11,6 +11,8 @@
 <body>
 <div class="container">
 
+    <a class="btn btn-primary" href="/" role="button">back</a>
+
     <div th:if="${error != null}" th:remove="tag">
         <div class="alert alert-danger" role="alert">error:<br/>
             <p th:text="${message}" />
@@ -18,15 +20,9 @@
 
     </div>
 
-    <div class="page-header table">
-        <h3>content</h3>
-    </div>
-
-
     <table class="table">
         <tr>
             <th>key</th>
-            <th>Bucket Name</th>
             <th>owner</th>
             <th>size</th>
             <th>lastModified</th>
@@ -35,18 +31,47 @@
         </tr>
         <tr th:each="bucketsummary : ${bucketsummaries}">
             <td th:text="${bucketsummary.key}">-</td>
-            <td th:text="${bucketsummary.bucketName}">-</td>
             <td th:text="${bucketsummary.owner}">-</td>
             <td th:text="${bucketsummary.size}">-</td>
             <td th:text="${bucketsummary.lastModified}">-</td>
             <td>
-                <a href="listBucketContent.html" th:href="@{/downloadcontent(bucketName=${bucket.bucketName})}">Download</a>
+                <a th:href="@{/downloadcontent(bucketKey=${bucketsummary.key},bucketName=${bucketsummary.bucketName})}">Download</a>
             </td>
             <td>
-                <a href="listBucketContent.html" th:href="@{/deletecontent(bucketName=${bucket.owner})}">delete</a>
+                <a th:href="@{/deletecontent(bucketKey=${bucketsummary.key},bucketName=${bucketsummary.bucketName})}">delete</a>
             </td>
         </tr>
     </table>
+
+
+    <form th:action="@{/bucketcontentupload}" enctype="multipart/form-data" method="post" class="form-create">
+
+        <div class="page-header">
+            <h3>Add content to bucket</h3>
+        </div>
+
+        <div class="form-group">
+
+            <input type="hidden" name="bucketName" id="bucketName" th:value="${bucketName}"/>
+
+            <p>
+                <label for="key">key</label><br/>
+                <input class="form-control required" type="text" name="key" id="key"/>
+            </p>
+
+            <p>
+                <label for="file">File to upload</label><br/>
+                <input class="file" type="file" name="file" id="file"/>
+            </p>
+
+            <p>
+                <input class="form-control" type="submit" value="add" />
+            </p>
+
+        </div>
+
+    </form>
+
 
 </div>
 </body>

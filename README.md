@@ -142,9 +142,11 @@ I will use a simple spring boot app to showcase some functionalty. The app offer
 * add a bucket
 * remove a bucket
 * upload a file into a bucket
-* download a file from a bucket
-* update a file in a bucket
 * remove a file in a bucket
+
+TODO:
+
+* download a file from a bucket
 
 I will use the same app with 2 libs.
 
